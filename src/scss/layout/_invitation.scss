@@ -1,0 +1,47 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.invitation-container {
+    display: none;
+
+    @include m.desktop {
+
+
+        @include m.contenedor;
+        padding: 2rem 1rem;
+        background-color: #f2e9e4;
+        margin: 15rem auto 2rem auto;
+        border-radius: 0.7rem;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 85%;
+
+        img {
+            height: 30rem;
+            width: auto;
+            object-fit: cover;
+        }
+
+        .invitation-text {
+
+            h2,
+            h3 {
+                font-family: v.$titles;
+                color: v.$red;
+            }
+
+            h3 {
+                font-size: 4rem;
+            }
+
+            p {
+                font-family: v.$texts;
+                font-size: 3rem;
+                font-weight: v.$bold;
+                color: #22223b;
+            }
+        }
+
+    }
+}

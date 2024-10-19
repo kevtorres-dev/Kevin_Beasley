@@ -1,0 +1,51 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.text-section, .text-section-2 {
+    background-color: #22223b;
+    height: 100vh;
+    padding-bottom: -5rem;
+
+    @include m.desktop {
+        height: 84rem;
+        padding-bottom: 4rem;
+    }
+
+    .text-container {
+        @include m.contenedor;
+        text-align: center;
+
+        h3, p {
+            color: v.$red;
+            font-family: v.$titles;
+            font-size: 4rem;
+        }
+
+        p {
+            color: v.$white;
+            font-size: 3rem;
+        }
+
+        .long-text {
+            font-family: v.$texts;
+            font-size: 2.8rem;
+            margin-top: 2rem;
+        }
+    }
+}
+
+.text-section-2 {
+    display: none;
+    @include m.desktop{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    
+        .text-container {
+            .joke {
+                font-size: 1.9rem;
+                font-family: v.$texts;
+            }
+        }    
+    }
+}

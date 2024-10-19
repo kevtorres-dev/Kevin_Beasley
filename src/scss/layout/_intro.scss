@@ -1,0 +1,90 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.intro {
+    display: none;
+
+    @include m.desktop {
+        color: v.$white;
+        min-block-size: 100dvh;
+        display: grid;
+        place-items: center;
+        background-color: #f2e9e4;
+    }
+}
+
+pre {
+    font-size: 3rem;
+    font-weight: v.$bold;
+    background: #22223b;
+    padding: 5rem;
+    border-radius: 1rem;
+    margin-top: 10rem;
+    position: relative;
+
+    transform-style: preserve-3d;
+    transform:
+        perspective(5000px) rotateY(var(--rotateY)) rotateX(var(--rotateX));
+}
+
+.selector {
+    display: block;
+    position: relative;
+    color: #fcfcfb;
+    font-size: 7rem;
+    text-align: left;
+    font-family: v.$titles;
+}
+
+.property {
+    display: block;
+    color: #edede9;
+    font-family: v.$texts;
+    font-size: 3rem;
+    margin-top: -10rem;
+}
+
+.punctuation {
+    display: block;
+    font-size: 6rem;
+    color: #e63946;
+    font-family: v.$texts;
+}
+
+pre::before,
+pre::after {
+    content: "";
+    position: absolute;
+    border-radius: inherit;
+}
+
+
+pre::before {
+    inset: 0.75rem;
+    background: black;
+    transform: translateZ(-49px);
+    filter: blur(15px);
+    opacity: 0.5;
+}
+
+/*Degradado*/
+pre::after {
+    inset: -1.7rem;
+    background:
+        linear-gradient(-45deg, #9a8c98, #c9ada7);
+    transform: translateZ(-50px);
+}
+
+svg {
+    display: block;
+    width: 1400px;
+    height: 200px;
+    margin: auto;
+    margin-top: -4rem;
+}
+
+text {
+    font-size: 12rem;
+    font-family: v.$titles;
+    fill: #e63946;
+}
